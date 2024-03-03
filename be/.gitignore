@@ -1,0 +1,4 @@
+node_modules
+productData
+# I usually include lock files in git history  
+pnpm-lock.yaml 

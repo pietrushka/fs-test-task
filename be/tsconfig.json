@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "target": "ES2020",
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "outDir": "dist",
+        "types": [
+            "node",
+        ],
+        "lib": [
+            "es2015"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "**/*.ts",
+        "src/controllers",
+    ]
+}
