@@ -24,3 +24,4 @@ Todos
 - Set up environment variables on the frontend
 - Enable database authentication for security
 - Prepare for multiple environments (development, production, local)
+- Add caching
