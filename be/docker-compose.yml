@@ -9,6 +9,11 @@ services:
       - 27017:27017
     environment:
       - MONGO_INITDB_DATABASE=Products
+  
+  mongo-seed:
+    build: ./mongo-seed
+    depends_on:
+      - mongodb
 
   api-server:
     build:
