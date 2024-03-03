@@ -1,23 +1,24 @@
 import express, { Application } from 'express';
-import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import productRouter from './routers/product.router';
 import { MONGO_URL } from './constants';
+import { globalErrorHandler, notFoundHandler } from './middlewares/errorHandlers';
 
 class App {
   public app: Application;
 
   constructor() {
     this.app = express();
-    this.setConfig();
+    this.setMiddlewares();
+    this.setMongoConfig();
     this.registerRouters();
+    this.setErrorHandling();
   }
 
-  private setConfig() {
-    this.app.use(bodyParser.json({ limit: '50mb' }));
+  private setMiddlewares() {
+    this.app.use(express.json());
     this.app.use(cors());
-    this.setMongoConfig();
   }
 
   private setMongoConfig() {
@@ -27,6 +28,11 @@ class App {
 
   private registerRouters() {
     this.app.use('/product', productRouter);
+  }
+
+  private setErrorHandling() {
+    this.app.all('*', notFoundHandler);
+    this.app.use(globalErrorHandler);
   }
 }
 

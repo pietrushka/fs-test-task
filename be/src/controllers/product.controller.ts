@@ -13,7 +13,6 @@ export class ProductController {
       const products = await this.productService.findAll();
       res.send(products);
     } catch (error) {
-      // TODO add error handling
       next(error);
     }
   };
