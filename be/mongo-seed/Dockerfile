@@ -1,4 +1,6 @@
 FROM mongo
 
 COPY init.json /init.json
-CMD mongoimport --host mongodb --db Products --collection products --type json --file /init.json --jsonArray
+
+# it reacreates products collection with seed data
+CMD mongoimport --host mongodb --db Products --collection products --type json --file /init.json --jsonArray --drop
