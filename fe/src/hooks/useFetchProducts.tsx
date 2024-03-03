@@ -9,7 +9,6 @@ export default function useFetchProducts() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // TODO use env variable
         const response = await fetch('http://localhost:3000/product/all');
 
         if (response.status !== 200) {

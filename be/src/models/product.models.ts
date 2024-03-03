@@ -34,7 +34,6 @@ const ProductSchema = new mongoose.Schema({
 
 // infering better than separate document interface,
 // mongoose doesn't check if document interface lines up with schema
-// TODO share Product type with fe
 export type TProduct = mongoose.InferSchemaType<typeof ProductSchema>;
 
 export default mongoose.model('product', ProductSchema);
