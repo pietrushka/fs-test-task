@@ -1,3 +1,3 @@
-export const SERVER_PORT = 9001;
+export const SERVER_PORT = process.env.SERVER_PORT!;
 
-export const MONGO_URL = 'mongodb://localhost:27017/Products';
+export const MONGO_URL = process.env.MONGO_URL!;
